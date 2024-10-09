@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://mirepo.github.io',
-  base: 'mirepo.github.io',
+  base: '/mirepo.github.io'
 });
 
