@@ -1,0 +1,43 @@
+---
+const personalImageAlt = "Mathias Martinez";
+---
+
+<article
+  class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+>
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+  >
+    <p>
+      Me llamo Mathias Martinez pero mis amigos me llaman Mathi. Empecé en la
+      programación hace ya 3 años. Actualmente estoy <strong
+        >aprendiendo cada dia nuevas tecnologias</strong
+      >.
+    </p>
+
+    <p>
+      Actualmente me encunetro <strong
+        >estudiando la carrera de ingenieria en sistemas de informacion</strong
+      >.
+    </p>
+
+    <p>
+      Como freelance, <strong
+        >desarrolle muchas habilidades y conoci muchos tipos de lenguajes de
+        programación para desempeñarme<em class="italic">
+          como FullStack</em
+        ></strong
+      >. Mi objetivo es mejorar cada dia y poder llegar a ser un gran
+      desarrollador.
+    </p>
+  </div>
+
+  <img
+    width="180"
+    height="180"
+    src="/projects/image.jpeg"
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+    style="object-position: 50% 50%"
+  />
+</article>

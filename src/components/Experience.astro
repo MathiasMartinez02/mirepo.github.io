@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "2021 - 2024",
+    title: "Freelance",
+    company: "EstrategiaNet",
+    description:
+      "Desarrollo webs y aplicaciones para pequeñas o grandes empresas, para mejorar su rendimiento y presencia en internet. Ademas me dedico a aprender para seguir aportando a mis clientes lo mas nuevo y lo mejor que haya actualmente.",
+  },
+  {
+    date: "03/2024 - 06/2024",
+    title: "Analista en Sistemas",
+    company: "Grupo Dinosaurio",
+    description:
+      "Analista en Sistemas, especializado en capturar requerimientos y optimizar procesos para soluciones tecnológicas efectivas.",
+  },
+  {
+    date: "06/2024 - Actualidad",
+    title: "Desarrollador",
+    company: "Grupo Dinosaurio",
+    description:
+      "Desarrollador especializado en la implementación de soluciones tecnológicas, con enfoque en la creación de aplicaciones eficientes y escalables.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
