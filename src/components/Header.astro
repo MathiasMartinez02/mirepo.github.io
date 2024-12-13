@@ -5,22 +5,22 @@ const navItems = [
   {
     title: "Experiencia",
     label: "experiencia",
-    url: "/#experiencia",
+    href: "/#experiencia",
   },
   {
     title: "Proyectos",
     label: "proyectos",
-    url: "/#proyectos",
+    href: "/#proyectos",
   },
   {
     title: "Sobre mí",
     label: "sobre-mi",
-    url: "/#sobre-mi",
+    href: "/#sobre-mi",
   },
   {
     title: "Contacto",
     label: "contacto",
-    url: "https://wa.me/3512014013",
+    href: "https://wa.me/3512014013",
   },
 ];
 ---
@@ -36,7 +36,7 @@ const navItems = [
         <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
           aria-label={link.label}
-          href={link.url}
+          href={link.href}
         >
           {link.title}
         </a>
