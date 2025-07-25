@@ -4,9 +4,15 @@ import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
-import Html from "./icons/Html.astro";
+import Angular from "./icons/Angular.astro";
 import MySql from "./icons/MySql.astro";
 import React from "./icons/React.astro";
+import C from "./icons/C.astro";
+import Git from "./icons/Git.astro";
+import Php from "./icons/Php.astro";
+import Jira from "./icons/Jira.astro";
+import Confluence from "./icons/Confluence.astro";
+import Figma from "./icons/Figma.astro";
 import Image from "../images/image.png";
 
 const TAGS = {
@@ -15,15 +21,30 @@ const TAGS = {
     class: "bg-black text-white",
     icon: NextJS,
   },
+  C: {
+    name: "C#",
+    class: "bg-[#24214f] text-white",
+    icon: C,
+  },
+  PHP: {
+    name: "Php",
+    class: "bg-black text-white",
+    icon: Php,
+  },
+  GIT: {
+    name: "Git",
+    class: "bg-[#a75649] text-white",
+    icon: Git,
+  },
   TAILWIND: {
     name: "Tailwind",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-  HTML: {
-    name: "HTML",
-    class: "bg-[#CE7843] text-white",
-    icon: Html,
+  ANG: {
+    name: "Angular",
+    class: "bg-[#A6120D] text-white",
+    icon: Angular,
   },
   MYSQL: {
     name: "MySQL",
@@ -35,36 +56,76 @@ const TAGS = {
     class: "bg-[#00248A] text-white",
     icon: React,
   },
+  Jira: {
+    name: "Jira",
+    class: "bg-[#00248A] text-white",
+    icon: Jira,
+  },
+  Confluence: {
+    name: "Confluence",
+    class: "bg-[#00248A] text-white",
+    icon: Confluence,
+  },
+  Figma: {
+    name: "Figma",
+    class: "bg-[#00248A] text-white",
+    icon: Figma,
+  },
 };
 
 const PROJECTS = [
   {
-    title: "E-commerce de Indumentaria",
+    title: "💳 Módulo de Cotización en USD",
     description:
-      "Pagina de ventas para una empresa mayorista de indumentaria. +1000 clientes por mes ganados gracias a la pagina",
-    link: "https://styleindumentaria.com",
-    image: "/mirepo.github.io/projects/904shots_so.webp",
-    tags: [TAGS.MYSQL, TAGS.TAILWIND, TAGS.HTML],
+      "Desarrollo de sistema multimoneda para cotizaciones y generación de órdenes de pago.<br>" +
+      "▫️Rol: Frontend Developer + lógica de negocio<br>" +
+      "▫️Impacto: Automatización del canal mayorista y optimización del proceso comercial.",
+    image: "/mirepo.github.io/projects/125shots_so.png",
+    github: "https://github.com/MathiasMartinez02",
+    tags: [TAGS.ANG, TAGS.C, TAGS.MYSQL, TAGS.GIT],
   },
   {
-    title: "Multiples Proyectos de Practica",
+    title: "🧾 Sistema de Pre-Facturación",
     description:
-      "Multiples proyectos para practicar las nuevas tecnologias y para poder pulir habilidades o sintaxis de codigo. Conozco estos tags y mucho mas!",
-    image: "/mirepo.github.io/projects/304shots_so.webp",
+      "Herramienta interna para organizar pedidos online y validar disponibilidad antes de generar la venta.<br>" +
+      "▫️ Rol: Frontend Developer<br>" +
+      "▫️ Impacto: Disminución de tiempos de atención y aumento de conversiones.",
+    image: "/mirepo.github.io/projects/457shots_so.png",
     github: "https://github.com/MathiasMartinez02",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.HTML, TAGS.MYSQL, TAGS.REACT],
+    tags: [TAGS.ANG, TAGS.C, TAGS.MYSQL, TAGS.GIT],
+  },
+  {
+    title: "📦 Sistema de Control de Vencimientos",
+    description:
+      "App para el monitoreo de productos con fechas límite en góndolas.<br>" +
+      "▫️ Rol: Fullstack Developer<br>" +
+      "▫️ Impacto: Disminución de pérdidas por vencimientos y mayor control operativo en sucursales.",
+    image: "/mirepo.github.io/projects/711shots_so.png",
+    github: "https://github.com/MathiasMartinez02",
+    tags: [TAGS.ANG, TAGS.C, TAGS.MYSQL, TAGS.GIT],
+  },
+  {
+    title: "🧠 Sistema de Gestión de Requerimientos Internos",
+    description:
+      "Aplicación interna para centralizar y dar seguimiento a los requerimientos de distintas áreas de negocio.<br>" +
+      "▫️ Rol: Analista Funcional<br>" +
+      "▫️ Tareas: Relevamiento con usuarios clave, modelado de procesos, elaboración de documentación funcional y validación de entregables con QA y desarrollo.<br>" +
+      "▫️ Impacto: Reducción de retrabajos, mejora en la comunicación entre áreas técnicas y funcionales, y aceleración del ciclo de desarrollo.",
+    image: "/mirepo.github.io/projects/631shots_so.png",
+    github: "https://github.com/MathiasMartinez02",
+    tags: [TAGS.Jira, TAGS.Confluence, TAGS.Figma],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              alt="Project Image"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
@@ -90,20 +151,15 @@ const PROJECTS = [
               ))}
             </ul>
 
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
-            </div>
+            <div
+              class="mt-2 text-gray-700 dark:text-gray-400"
+              set:html={description}
+            />
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
                   Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
                 </LinkButton>
               )}
             </footer>
