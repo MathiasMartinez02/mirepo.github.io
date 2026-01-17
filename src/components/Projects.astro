@@ -75,13 +75,39 @@ const TAGS = {
 
 const PROJECTS = [
   {
+    title: "💳 Plataforma de Cobros y Recibos Digitales (Mercado Pago)",
+    description:
+      "Plataforma core para generación y cobro de recibos digitales con integración a Mercado Pago (Checkout Pro + Webhooks).<br>" +
+      "▫️ Rol: Fullstack Developer (Laravel + MySQL)<br>" +
+      "▫️ Implementé: links de pago, estados, conciliación, cuotas/coeficientes por canal y concepto.<br>" +
+      "▫️ Nota: Proyecto bajo NDA (sin código público).",
+    image: "/mirepo.github.io/projects/273shots_so.webp",
+    link: "/projects/recibos-mercadopago",
+    confidential: true,
+    tags: [TAGS.PHP, TAGS.MYSQL, TAGS.GIT],
+  },
+  {
+    title: "🚗 Sync de Inventario de Vehículos (SDI → WMS)",
+    description:
+      "Pipeline de integración para sincronizar inventario entre sistemas internos.<br>" +
+      "▫️ Rol: Backend Developer (Node.js + TypeScript + MySQL)<br>" +
+      "▫️ Implementé: batches concurrentes, detección de cambios por hash y upserts optimizados.<br>" +
+      "▫️ Nota: Proyecto bajo NDA (sin código público).",
+    image: "/mirepo.github.io/projects/931shots_so.webp",
+    link: "/projects/sync-vehiculos",
+    confidential: true,
+    tags: [TAGS.MYSQL, TAGS.GIT],
+  },
+  {
     title: "💳 Módulo de Cotización en USD",
     description:
-      "Desarrollo de sistema multimoneda para cotizaciones y generación de órdenes de pago.<br>" +
-      "▫️Rol: Frontend Developer + lógica de negocio<br>" +
-      "▫️Impacto: Automatización del canal mayorista y optimización del proceso comercial.",
+      "Sistema multimoneda para cotizaciones y generación de órdenes de pago.<br>" +
+      "▫️ Rol: Frontend Developer + lógica de negocio<br>" +
+      "▫️ Impacto: Automatización del canal mayorista y optimización del proceso comercial.<br>" +
+      "▫️ Nota: Proyecto bajo NDA (sin código público).",
     image: "/mirepo.github.io/projects/125shots_so.webp",
-    github: "https://github.com/MathiasMartinez02",
+    link: "/projects/cotizacion-usd",
+    confidential: true,
     tags: [TAGS.ANG, TAGS.C, TAGS.MYSQL, TAGS.GIT],
   },
   {
@@ -89,9 +115,11 @@ const PROJECTS = [
     description:
       "Herramienta interna para organizar pedidos online y validar disponibilidad antes de generar la venta.<br>" +
       "▫️ Rol: Frontend Developer<br>" +
-      "▫️ Impacto: Disminución de tiempos de atención y aumento de conversiones.",
+      "▫️ Impacto: Disminución de tiempos de atención y aumento de conversiones.<br>" +
+      "▫️ Nota: Proyecto bajo NDA (sin código público).",
     image: "/mirepo.github.io/projects/457shots_so.webp",
-    github: "https://github.com/MathiasMartinez02",
+    link: "/projects/pre-facturacion",
+    confidential: true,
     tags: [TAGS.ANG, TAGS.C, TAGS.MYSQL, TAGS.GIT],
   },
   {
@@ -99,20 +127,23 @@ const PROJECTS = [
     description:
       "App para el monitoreo de productos con fechas límite en góndolas.<br>" +
       "▫️ Rol: Fullstack Developer<br>" +
-      "▫️ Impacto: Disminución de pérdidas por vencimientos y mayor control operativo en sucursales.",
+      "▫️ Impacto: Disminución de pérdidas por vencimientos y mayor control operativo.<br>" +
+      "▫️ Nota: Proyecto bajo NDA (sin código público).",
     image: "/mirepo.github.io/projects/711shots_so.webp",
-    github: "https://github.com/MathiasMartinez02",
+    link: "/projects/vencimientos",
+    confidential: true,
     tags: [TAGS.ANG, TAGS.C, TAGS.MYSQL, TAGS.GIT],
   },
   {
-    title: "🧠 Sistema de Gestión de Requerimientos Internos",
+    title: "🧠 Gestión de Requerimientos Internos",
     description:
-      "Aplicación interna para centralizar y dar seguimiento a los requerimientos de distintas áreas de negocio.<br>" +
+      "Aplicación para centralizar y dar seguimiento a requerimientos entre áreas.<br>" +
       "▫️ Rol: Analista Funcional<br>" +
-      "▫️ Tareas: Relevamiento con usuarios clave, modelado de procesos, elaboración de documentación funcional y validación de entregables con QA y desarrollo.<br>" +
-      "▫️ Impacto: Reducción de retrabajos, mejora en la comunicación entre áreas técnicas y funcionales, y aceleración del ciclo de desarrollo.",
+      "▫️ Tareas: relevamiento, procesos, documentación, validación con QA y desarrollo.<br>" +
+      "▫️ Nota: Proyecto bajo NDA (sin código público).",
     image: "/mirepo.github.io/projects/631shots_so.webp",
-    github: "https://github.com/MathiasMartinez02",
+    link: "/projects/requerimientos",
+    confidential: true,
     tags: [TAGS.Jira, TAGS.Confluence, TAGS.Figma],
   },
 ];
@@ -120,52 +151,70 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Project Image"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+    PROJECTS.map(
+      ({ image, title, description, tags, github, link, confidential }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img
+                alt="Project Image"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
 
-            <div
-              class="mt-2 text-gray-700 dark:text-gray-400"
-              set:html={description}
-            />
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              )}
-            </footer>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+                {confidential && (
+                  <li>
+                    <span class="flex gap-x-2 rounded-full text-xs bg-gray-900 text-white py-1 px-2">
+                      🔒 NDA
+                    </span>
+                  </li>
+                )}
+              </ul>
+
+              <div
+                class="mt-2 text-gray-700 dark:text-gray-400"
+                set:html={description}
+              />
+
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-6" />
+                    Detalles
+                  </LinkButton>
+                )}
+
+                {github && !confidential && (
+                  <LinkButton href={github}>
+                    <GitHub class="size-6" />
+                    Code
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
           </div>
-        </div>
-      </article>
-    ))
+        </article>
+      )
+    )
   }
 </div>
